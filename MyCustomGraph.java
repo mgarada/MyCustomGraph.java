@@ -1,8 +1,8 @@
 /*
-Mohammad Garada
-Project 6, Graph Methods implementation
 MyCustomGraph.java
-Implementing methods for graphs
+Mohammad Garada
+Graph Methods implementation
+Mohammad Garada
  */
 
 package cmsc256;
@@ -126,10 +126,40 @@ public class MyCustomGraph<V> extends UnweightedGraph<V> {
     }
 
     //determines whether there is a cycle in the graph
-    public boolean hasCycle() {
-        return true;
+   public boolean hasCycle() {
+    // Iterate over each vertex in the graph
+    for (V vertex : vertices) {
+        // Create a list to keep track of visited vertices
+        List<V> visited = new ArrayList<>();
+        // Use dfs() to check for cycles starting at this vertex
+        if (dfs(vertex, visited, null)) {
+            // If a cycle is found, return true
+            return true;
+        }
     }
+    // If no cycles are found, return false
+    return false;
+}
 
-
+// Recursive dfs helper function to check for cycles
+private boolean dfs(V vertex, List<V> visited, V parent) {
+    // Add the current vertex to the visited list
+    visited.add(vertex);
+    // Iterate over each neighbor of the current vertex
+    for (V neighbor : getNeighbors(vertex)) {
+        // If the neighbor has not been visited yet, recursively call dfs()
+        if (!visited.contains(neighbor)) {
+            if (dfs(neighbor, visited, vertex)) {
+                // If a cycle is found, return true
+                return true;
+            }
+        // If the neighbor has been visited and it is not the parent of the current vertex, a cycle is found
+        } else if (!neighbor.equals(parent)) {
+            return true;
+        }
+    }
+    // If no cycles are found, return false
+    return false;
+    }
 }
 
