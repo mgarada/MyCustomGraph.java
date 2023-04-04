@@ -1,6 +1,10 @@
 # MyCustomGraph.java
 ## Description 
 'MyCustomGraph' is a Java class that implements a graph data structure. This class extends the 'UnweightedGraph' class and includes methods for reading in a graph from a file, checking if the graph is complete, checking if two vertices are adjacent, checking if the graph is connected, finding the shortest path between two vertices, and checking if the graph has a cycle.
+
+  ## Requirements 
+  To compile and run this class, make sure to have a JDK installed on your system
+
 ## Constructors 
 The class includes five constructors that allow for the creation of a graph object. These are:
 
@@ -9,9 +13,6 @@ The class includes five constructors that allow for the creation of a graph obje
 - 'MyCustomGraph(List<Edge> edges, int numberOfVertices)': Creates a graph with the specified edges and number of vertices.
 - 'MyCustomGraph(List<V> vertices, List<Edge> edges)': Creates a graph with the specified vertices and edges.
 - 'MyCustomGraph(V[] vertices, int[][] edges)': Creates a graph with the specified vertices and edges.
-
-  ## Requirements 
-  To compile and run this class, make sure to have a JDK installed on your system
   
   ## Usage 
   
@@ -22,3 +23,8 @@ The class includes five constructors that allow for the creation of a graph obje
 - 'isConnected()': Returns true if the graph is connected (i.e., there is a path between every pair of vertices), and false otherwise.
 - 'getShortestPath(int begin, int end)': Returns a list of integers representing the shortest path between vertices begin and end, or null if there is no path between them.
 - 'hasCycle()': Returns true if the graph contains a cycle (i.e., there is a path from a vertex back to itself), and false otherwise.
+  
+  ## Credits 
+  This project was created by Mohammad Garada
+
+
